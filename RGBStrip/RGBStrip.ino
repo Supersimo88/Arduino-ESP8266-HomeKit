@@ -1,3 +1,7 @@
+//This is a Philips HUE light clone using standard non addressable RGB strip
+//it need 3 npn transistor (2n2222 or similar) and 3 1Khom reistor
+//use this ESPHelper library https://github.com/Supersimo88/Arduino-1.8.1/tree/master/libraries/ESPHelper-master
+//and this HSBColor library https://github.com/Supersimo88/Arduino-1.8.1/tree/master/libraries/HSB_Color-master
 #include <ESPHelper.h>
 #include <HSBColor.h>
 
