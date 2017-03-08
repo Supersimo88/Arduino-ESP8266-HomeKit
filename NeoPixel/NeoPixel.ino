@@ -9,10 +9,10 @@
 #define PIN D8
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, PIN, NEO_GRB + NEO_KHZ800);
 
-const char* ssid = "Telecom-19250793";
-const char* password = "yxsplyuvMmEMlS5vbg67MPK3";
+const char* ssid = "___"; // your WiFi ssid
+const char* password = "___"; // your WiFi password
 const char* host = "officelight"; // the name of your fixture, and the base channel to listen to
-IPAddress MQTTserver(192, 168, 1, 19);
+IPAddress MQTTserver(192, 168, 1, 1); // your MQTT server IP
 #define HOSTNAME "ESP8266-OTA-LIGHT-"
 
 /* NO NEED TO CHANGE BENEATH THIS LINE */
