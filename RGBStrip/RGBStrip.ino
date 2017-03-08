@@ -1,13 +1,12 @@
 #include <ESPHelper.h>
 #include <HSBColor.h>
-#include "Metro.h"
 
 #define TOPIC "/light/rgb"
 #define STATUS TOPIC "/status"
 #define NETWORK_HOSTNAME "rgblight"
-#define OTA_PASSWORD "ENOMIS55"
+#define OTA_PASSWORD "_____" //set you OTA password
 
-#define RED_PIN D1    
+#define RED_PIN D1    //set the r,g,b, pin for your esp8266
 #define GREEN_PIN D2
 #define BLUE_PIN D3
 #define BLINK_PIN D4
@@ -26,22 +25,9 @@ typedef struct lightState{
   int updateType;
 };
 
-typedef struct timer {
-  unsigned long previousTime;
-  int interval;
-};
-
-
-
-enum superModes {SET, MOOD};
-enum moodColors{RED, GREEN, BLUE};
-enum modes {NORMAL, FADING};
-enum updateTypes{HSB, RGB, POWER};
-
 
 lightState nextState;
 
-int superMode = SET;  //overall mode of the light (moodlight, network controlled, etc)
 boolean newCommand = false;
 
 
@@ -58,7 +44,7 @@ char statusString[50];  //string containing the current setting for the light
 
 
 //set this info for your own network
-netInfo homeNet = {.name = "rgblight", .mqtt = "192.168.1.19", .ssid = "Telecom-19250793", .pass = "yxsplyuvMmEMlS5vbg67MPK3"};
+netInfo homeNet = {.name = "___", .mqtt = "___", .ssid = "___", .pass = "___"};
 
 ESPHelper myESP(&homeNet);
 
@@ -91,7 +77,7 @@ void setup() {
 
 void loop() {
 
-  static bool connected = false; //keeps track of connection state to reset from MOOD to SET when network connection is made
+  static bool connected = false; //keeps track of connection state
 
 
   if(myESP.loop() == FULL_CONNECTION){
@@ -113,8 +99,6 @@ void lightHandler(){
   //new and current lightStates
   static lightState newState;
   static lightState currentState;
-
-  
 
   lightUpdater(&newState, currentState);
   lightChanger(newState, &currentState);
@@ -167,4 +151,3 @@ void callback(char* topic, byte* payload, unsigned int length) {
   strcpy(statusString, newPayload);
   myESP.publish(statusTopic, statusString, true);
 }
-
