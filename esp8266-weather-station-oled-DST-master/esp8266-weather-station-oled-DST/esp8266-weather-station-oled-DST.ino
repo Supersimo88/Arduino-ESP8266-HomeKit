@@ -104,7 +104,7 @@ char FormattedHumidity[10];
 
 //MQTT / HomeKit
 // Update these with values suitable for your network.
-IPAddress MQTTserver(192, 168, 1, 19);
+IPAddress MQTTserver(192, 168, 1, 1);
 WiFiClient wclient;
 PubSubClient client(wclient, MQTTserver);
 
@@ -128,7 +128,7 @@ struct dstRule EndRule = {"CET", Last, Sun, Oct, 2, 0};       // Central Europea
 
 // Wunderground Settings
 const boolean IS_METRIC = true;
-const String WUNDERGRROUND_API_KEY = "91bf78ebfd0662ed";
+const String WUNDERGRROUND_API_KEY = "___";
 const String WUNDERGRROUND_LANGUAGE = "IT";
 const String WUNDERGROUND_COUNTRY = "IT";
 const String WUNDERGROUND_CITY = "Genova";
@@ -308,8 +308,8 @@ void setup() {
  // wifiManager.autoConnect();
 
   //Manual Wifi
-  const char* SSID = "Telecom-19250793"; 
-const char* PASSWORD = "yxsplyuvMmEMlS5vbg67MPK3";
+  const char* SSID = "___"; 
+const char* PASSWORD = "___";
    WiFi.begin(SSID, PASSWORD);
   String hostname(HOSTNAME);
   hostname += String(ESP.getChipId(), HEX);
