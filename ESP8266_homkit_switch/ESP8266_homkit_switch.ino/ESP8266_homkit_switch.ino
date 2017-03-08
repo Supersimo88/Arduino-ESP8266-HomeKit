@@ -29,10 +29,10 @@
 #include "PubSubClient.h"
 #define TOPIC "/home/vSwitch1"
 #define NETWORK_HOSTNAME "switch1"
-#define OTA_PASSWORD "ENOMIS55"
+#define OTA_PASSWORD "___"
 
 #define BUTTON_PIN D0 //button on pin 0 with pull up resistor (pulled low on press)
-#define BLINK_PIN 
+#define BLINK_PIN D4
 
 
 char* buttonTopic = TOPIC;
@@ -46,7 +46,7 @@ bool currentState = false;
 bool lastButtonState = false;
 
 //set this info for your own network
-netInfo homeNet = {.name = "switch", .mqtt = "192.168.1.19", .ssid = "Telecom-19250793", .pass = "yxsplyuvMmEMlS5vbg67MPK3"};
+netInfo homeNet = {.name = "___", .mqtt = "192.168.1.1", .ssid = "___", .pass = "___"};
 ESPHelper myESP(&homeNet);
 
 void setup() {
