@@ -11,8 +11,8 @@ var name = "RGB Light";                                       //Name to Show to 
 var UUID = "hap-nodejs:accessories:RGBLight";     //Change the RGBLight to something unique for each light - this should be unique for each node on your system
 var USERNAME = "AC:AF:AC:2C:5D:FB";              //This must also be unique for each node - make sure you change it!
 
-var MQTT_IP = '/light/rgb'
-var lightTopic = '/YOUR/LIGHT/TOPIC/HERE'
+var MQTT_IP = 'YOU MQTT IP'
+var lightTopic = '/light/rgb'
 ////////////////CHANGE THESE SETTINGS TO MATCH YOUR SETUP BEFORE RUNNING!!!!!!!!!!!!!//////////////////////////
 ////////////////CHANGE THESE SETTINGS TO MATCH YOUR SETUP BEFORE RUNNING!!!!!!!!!!!!!//////////////////////////
 
